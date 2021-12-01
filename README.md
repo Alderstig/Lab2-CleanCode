@@ -17,7 +17,7 @@ SOLID, DRY och KISS. Övriga knep för att förtydliga är också önskvärt.
 
 ## Redovisning
 
-Skriv ihop en README.md eller README.txt och förklara kortfattat hur och varför ni har gjort eller inte gjort vad. 
+Skriv ihop en README.md och förklara kortfattat hur och varför ni har gjort eller inte gjort vad. 
 Lägg även till namnen på de som gjorde i labben i denna fil.
 
 Redovisning senast 2021-12-10
@@ -30,3 +30,9 @@ Skriv till Dan så kan vi komma överrens om en tid.
 
 ### GitHub
 Skicka github-länken till Dan
+
+
+Arbetsprocess:
+- editerade klass-och variabelnamn
+- Refaktorerade operationer i if-statement för att få ner kodmängden men även för att förminska upprepad kod
+_ Applicerade Single responsibility principle för OrderProcessorn

@@ -1,13 +1,17 @@
 ﻿using ITHS_CC_Labb2;
 
-OrderService orderService = new OrderService();
+//Skapa ny orderservice beroende på vilket interface/orderprioritet den implementerar
+//INormalSpeedProcessor normalOrderProcess = new OrderService();
 
-Order slowOrder = new Order
+IOrderService orderService = new OrderService();
+
+Order normalOrder = new Order
 {
     ID = Guid.NewGuid(),
-    Email = "slowEmail@example.com",
+    Email = "normalEmail@example.com",
     Priority = OrderStatus.Normal,
-    TotalPrce = 100,
+    TotalPrice = 100,
 };
 
-orderService.ProcessOrder(slowOrder);  
+//normalOrderProcess.(normalOrder);
+orderService.ProcessOrder(normalOrder);  
