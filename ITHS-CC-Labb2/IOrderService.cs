@@ -8,6 +8,6 @@ namespace ITHS_CC_Labb2
 {
     public interface IOrderService
     {
-        void ProcessOrder(Order order);
+        bool ProcessOrder(Order order);
     }
 }

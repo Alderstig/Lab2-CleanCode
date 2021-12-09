@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ITHS_CC_Labb2
 {
-    public class QuickOrderProcessor
+    public class QuickOrderProcessor : IOrderService
     {
-        public bool ProcessOrderQuickly(Order order)
+        public bool ProcessOrder(Order order)
         {
             // Some logic we don't care about
             return true;

@@ -6,38 +6,46 @@ using System.Threading.Tasks;
 
 namespace ITHS_CC_Labb2
 {
-    public class OrderProcessor : IOrderService
+    public class OrderService : IOrderService
     {
-        private readonly INormalOrderProcessor _normalOrderProcessor;
-        private readonly IQuickOrderProcessor _quickOrderProcessor;
-        private readonly ILightningSpeedOrderProcessor _lightningSpeedOrderProcessor;
+        /*
+        private readonly NormalOrderProcessor _normalOrderProcessor;
+        private readonly QuickOrderProcessor _quickOrderProcessor;
+        private readonly LightningSpeedOrderProcessor _lightningSpeedOrderProcessor;
 
-        public OrderProcessor(INormalOrderProcessor normalOrderProcessor, IQuickOrderProcessor quickOrderProcessor, ILightningSpeedOrderProcessor lightningSpeedOrderProcessor)
+        public OrderService()
         {
-            _normalOrderProcessor = normalOrderProcessor;
-            _quickOrderProcessor = quickOrderProcessor;
-            _lightningSpeedOrderProcessor = lightningSpeedOrderProcessor;
+            _normalOrderProcessor = new NormalOrderProcessor();
+            _quickOrderProcessor = new QuickOrderProcessor();
+            _lightningSpeedOrderProcessor = new LightningSpeedOrderProcessor();
         }
+        */
 
-        public void ProcessOrder(Order order)
+        public bool ProcessOrder(Order order)
         {
             bool processPriority = false;
 
             LogMessage("Attempting to process order with ID " + order.ID);
             if (order.Priority == OrderStatus.Normal)
             {
-                processPriority = _normalOrderProcessor.ProcessOrderNormally(order);
+                NormalOrderProcessor normalOrderProcessor = new();
+                processPriority = normalOrderProcessor.ProcessOrder(order);
                 logMessageAndSendEmail(order);
+                return processPriority;
             }
             else if (order.Priority == OrderStatus.Quick)
             {
-                processPriority = _quickOrderProcessor.ProcessOrderQuickly(order);
+                QuickOrderProcessor quickOrderProcessor = new();
+                processPriority = quickOrderProcessor.ProcessOrder(order);
                 logMessageAndSendEmail(order);
+                return processPriority;
             }
             else if (order.Priority == OrderStatus.LightningSpeed)
             {
-                processPriority = _lightningSpeedOrderProcessor.ProcessOrderInLightningSpeed(order);
+                LightningSpeedOrderProcessor lightningSpeedOrderProcessor = new();
+                processPriority = lightningSpeedOrderProcessor.ProcessOrder(order);
                 logMessageAndSendEmail(order);
+                return processPriority;
             }
             else
             {
@@ -48,6 +56,8 @@ namespace ITHS_CC_Labb2
             {
                 LogMessage("FAILED ORDER: Could not ship order with ID " + order.ID);
             }
+
+            return processPriority;
         }
         private void SendEmailNotification(string email, Guid ID)
         {

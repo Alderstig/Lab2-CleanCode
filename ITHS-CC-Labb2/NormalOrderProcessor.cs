@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ITHS_CC_Labb2
 {
-    public class NormalOrderProcessor : INormalOrderProcessor
+    public class NormalOrderProcessor : IOrderService
     {
-        public bool ProcessOrderNormally(Order order)
+        public bool ProcessOrder(Order order)
         {
             // Some logic we don't care about,
             return true;

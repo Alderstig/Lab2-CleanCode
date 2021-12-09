@@ -1,38 +1,15 @@
-﻿# Labb 2
+﻿## Labb2
 
-I denna laboration skall vi pröva att refaktorera lite kod efter de regler vi lärt oss hittils. 
+Denna labb är utförd av Philip Alderstig
 
-Det är helt ok att ni jobbar i par.
+- Jag började med att titta över projektet för att förstå dess funktion varpå jag lade mäske till vissa felstavningar samt variabelnamn som jag tyckte var otydliga.
+  Jag rättade dessa stavfel som jag kunde hitta och satte nya variabelnamn som jag tyckte var mer passande och mer beskrivande.
 
-## Vad är målet med laborationen?
+- Jag bröt sedan ut vissa metoder (de som processade ordrar på olika sätt) i "OrderService" till egna klasser, med intentionen att använda Single responsibility principen.
 
-Vi ska använda oss av hela batteriet för att refaktorera koden till lättförståelig och förvaltningsbar kod enligt
-SOLID, DRY och KISS. Övriga knep för att förtydliga är också önskvärt.
+- Jag skapade sedan ett interface som implementardes i mina nyskapade klasser samt för OrderService enligt Open/closed principen. Då samtliga klasser mer eller mindre skulle utföra liknande saker fast i olika fattningar implementerar de samma interface.
+  Antagligen ommer man vid senare tillfälle behöva addera fler interface eller ändra på detta på något sätt om man skulle behöva utöka funktionaliteten eller göra klasspecifika metoder.
 
-## Vad är kraven för laborationen?
+- Jag valde att inte göra några större förändringar i själva logiken just för att inte löpa risken att förstöra grundfunktionaliteten.
 
-1. Koden ska vara lättförståelig, eller så lättförståelig som möjligt.
-2. Ni ska använda minst två av de fem principerna i SOLID.
-3. DRY ska användas där det passar.
-
-## Redovisning
-
-Skriv ihop en README.md och förklara kortfattat hur och varför ni har gjort eller inte gjort vad. 
-Lägg även till namnen på de som gjorde i labben i denna fil.
-
-Redovisning senast 2021-12-10
-
-### Klassrummet
-Vid tillfälle på plats. Föredras.
-
-### Teams
-Skriv till Dan så kan vi komma överrens om en tid.
-
-### GitHub
-Skicka github-länken till Dan
-
-
-Arbetsprocess:
-- editerade klass-och variabelnamn
-- Refaktorerade operationer i if-statement för att få ner kodmängden men även för att förminska upprepad kod
-_ Applicerade Single responsibility principle för OrderProcessorn
+- Ett förbättringsområde hade kunnat vara att implementera Dependency inversion principen och dependency injection för att göra min "service" mindre beroende utav andra de andra klasserna.

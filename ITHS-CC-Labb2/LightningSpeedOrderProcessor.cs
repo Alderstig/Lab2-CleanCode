@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ITHS_CC_Labb2
 {
-    public class LightningSpeedOrderProcessor : ILightningSpeedOrderProcessor
+    public class LightningSpeedOrderProcessor : IOrderService
     {
-        public bool ProcessOrderInLightningSpeed(Order order)
+        public bool ProcessOrder(Order order)
         {
             // Some logic we don't care about
             return true;
