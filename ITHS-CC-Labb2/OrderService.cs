@@ -15,10 +15,14 @@ namespace ITHS_CC_Labb2
             _emailService = emailService;
         }
 
-        public void ProcessOrder(Order order)
+        public void ProcessOrder(List<Order> order)
         {
-            order.Processor.Process();
-            _emailService.SendEmail(order);
+            foreach (var orderItem in order)
+            {
+                orderItem.Processor.Process();
+                _emailService.SendEmail(orderItem);
+            }
+            
         }
     }
 }
