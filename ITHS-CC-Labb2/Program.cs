@@ -14,7 +14,7 @@ List<Order> orders = new List<Order>()
     new Order()
     {
         ID = Guid.NewGuid(),
-        Email = "quicklEmail@example.com",
+        Email = "quickEmail@example.com",
         Processor = new QuickOrderProcessor(),
         TotalPrice = 200,
     },

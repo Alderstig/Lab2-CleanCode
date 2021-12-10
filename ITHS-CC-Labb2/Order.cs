@@ -6,12 +6,6 @@ using System.Threading.Tasks;
 
 namespace ITHS_CC_Labb2
 {
-    public enum OrderStatus
-    {
-        Normal,
-        Quick,
-        LightningSpeed
-    }
     public class Order
     {
         public Guid ID { get; set; }

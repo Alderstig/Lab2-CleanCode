@@ -2,10 +2,13 @@
 
 Denna labb är utförd av Philip Alderstig
 
-- Jag började med att titta över projektet för att förstå dess funktion varpå jag lade märke till vissa felstavningar samt variabelnamn som jag tyckte var otydliga.
-  Jag rättade dessa stavfel som jag kunde hitta och satte nya variabelnamn som jag tyckte var mer passande och mer beskrivande.
+- Jag började med att titta över projektet för att förstå dess funktion.
 
 - Jag bröt ut de metoder som låg i OrderServicen till egna klasser, med intentionen att använda Single responsibility principen.
 
-- 
+- Jag skapade interface för mina klasser för att underlätta framtida utökning av projektet enligt Open/Closed principen samt  Interface segregation principen.
 
+- Tack vare min refaktorering samt genom att ändra på properties i Order så att en order istället för att ta en order prioritering nu tog en "processmetod" (alltså på vilket sätt/vilken fart ordern skulle behandlas)
+  kunde jag ta bort det if-statement som låg i Orderservice och därmed få bort många rader kod
+
+- Jag gjorde sedan så att OrderService kunde ta processa en lista av orders och därmed hantera flera orders samtidigt

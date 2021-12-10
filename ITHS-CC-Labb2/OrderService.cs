@@ -15,9 +15,9 @@ namespace ITHS_CC_Labb2
             _emailService = emailService;
         }
 
-        public void ProcessOrder(List<Order> order)
+        public void ProcessOrder(List<Order> orders)
         {
-            foreach (var orderItem in order)
+            foreach (var orderItem in orders)
             {
                 orderItem.Processor.Process();
                 _emailService.SendEmail(orderItem);
