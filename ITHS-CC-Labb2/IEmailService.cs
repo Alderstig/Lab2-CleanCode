@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ITHS_CC_Labb2
 {
-    public interface IOrderService
+    public interface IEmailService
     {
-        void ProcessOrder(Order order);
+        void SendEmail(Order order);
     }
 }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ITHS_CC_Labb2
 {
-    public interface IOrderService
+    public interface IOrderProcessor
     {
-        void ProcessOrder(Order order);
+        bool Process();
     }
 }

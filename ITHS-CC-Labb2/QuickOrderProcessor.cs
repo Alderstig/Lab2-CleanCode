@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ITHS_CC_Labb2
 {
-    public class QuickOrderProcessor : IOrderService
+    public class QuickOrderProcessor : IOrderProcessor
     {
-        public bool ProcessOrder(Order order)
+        public bool Process()
         {
             // Some logic we don't care about
+            Console.WriteLine("QuickOrderProcessor started...");
             return true;
         }
     }

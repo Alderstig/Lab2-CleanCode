@@ -16,7 +16,7 @@ namespace ITHS_CC_Labb2
     {
         public Guid ID { get; set; }
         public int TotalPrice { get; set; }
-        public OrderStatus Priority { get; set; }
+        public IOrderProcessor Processor { get; set; }
         public string Email { get; set; }
     }
 }
